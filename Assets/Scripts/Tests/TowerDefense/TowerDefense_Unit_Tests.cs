@@ -55,7 +55,7 @@ namespace Tests
                 }
             }
 
-            IPathFinder pathFinder = null; //<-- TODO: Create Dijsktra pathfinder class here, TIP-->> Use accessible tiles
+            IPathFinder pathFinder = new Dijkstra(accessibles); //<-- TODO: Create Dijsktra pathfinder class here, TIP-->> Use accessible tiles
             IEnumerable<Vector2Int> path = pathFinder.FindPath(new Vector2Int(xStart, yStart), new Vector2Int(xGoal, yGoal));            
             Assert.AreEqual(expectedLength, path.Count());          
         }    
